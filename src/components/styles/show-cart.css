@@ -1,0 +1,18 @@
+.input-quantity {
+  font-size: 12px;
+  opacity: 0.5;
+  border: none;
+  border-bottom: 1px solid black;
+  font: bold;
+  padding-left: 5px;
+  margin-left: 2px;
+}
+.show-cart-container {
+  text-align: center;
+}
+.first-column {
+  text-align: right;
+}
+.last-column {
+  text-align: left;
+}

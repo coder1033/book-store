@@ -1,0 +1,25 @@
+.search{
+  position: relative;
+  text-align: center;
+  margin-top:10rem;
+}
+
+.search input{
+  border: none;
+  border-bottom: 2px #f8f9fa solid;
+  width: 20em;
+  font-size: large;
+  outline: none;
+  color: #343a40;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+@media(max-width:500px){
+  .search input{
+    width: 15em;
+    font-size: medium;
+  }
+}
