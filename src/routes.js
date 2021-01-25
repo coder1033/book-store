@@ -10,7 +10,7 @@ import "./style/routes.css";
 if (!localStorage.books) {
   localStorage.books = JSON.stringify({});
   localStorage.books_count = JSON.stringify({});
-  localStorage.total_items = 0;
+  localStorage.total_items = JSON.stringify(0);
 }
 
 const Routes = () => {
@@ -55,7 +55,7 @@ const Routes = () => {
                 Cart
                 <AiOutlineShoppingCart />{" "}
                 <span id="cart-items">
-                  {parseInt(localStorage.total_items)}
+                  {parseInt(localStorage.total_items) || 0}
                 </span>
               </Nav.Link>
             </Nav>
