@@ -1,6 +1,15 @@
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import Spinner from "./spinner.js";
 import { useState, useEffect } from "react";
-import { Row, Col, Image, Container, Jumbotron, Button } from "react-bootstrap";
+import {
+  Alert,
+  Row,
+  Col,
+  Image,
+  Container,
+  Jumbotron,
+  Button,
+} from "react-bootstrap";
 import "./styles/show-cart.css";
 
 const ShowCart = () => {
@@ -44,6 +53,14 @@ const ShowCart = () => {
   };
   if (!isFetched) {
     return <Spinner />;
+  }
+  if (!parseInt(localStorage.total_items)) {
+    return (
+        <Container className="show-cart-container">
+        <AiOutlineShoppingCart size={200} />
+        There's nothing in your cart...
+        </Container>
+    )
   }
   return (
     <Container className="show-cart-container">
@@ -108,7 +125,7 @@ const TotalPrice = (props) => {
     );
   }, [books_count, price, books, setPrice]);
 
-  return <p className="text-danger">Your Grand Total is {price} INR</p>;
+  return <Alert variant="info">Your Grand Total is {price} INR</Alert>;
 };
 
 export default ShowCart;
