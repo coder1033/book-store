@@ -6,7 +6,6 @@ const Show = (props) => {
   let { books } = props;
 
   const onClick = (book) => {
-    console.log(book, "this is book", typeof book);
     cart(book);
   };
 
@@ -21,16 +20,30 @@ const Show = (props) => {
         >
           <Card.Img
             variant="top"
-            src={book.volumeInfo.imageLinks.thumbnail}
+            src={
+              book.volumeInfo.imageLinks
+                ? book.volumeInfo.imageLinks.thumbnail
+                : ""
+            }
+            alt="image not available"
             width="300"
             height="250"
           />
           <Card.Body>
             <Card.Title className="text-muted">
-              Price {book.saleInfo.listPrice.amount}{" "}
-              {book.saleInfo.listPrice.currencyCode}
+              Price{" "}
+              {book.saleInfo.listPrice ? book.saleInfo.listPrice.amount : "NaN"}{" "}
+              {book.saleInfo.listPrice
+                ? book.saleInfo.listPrice.currencyCode
+                : "NaN"}
             </Card.Title>
-            <Button onClick={() => onClick(book)} variant="dark" size="sm">
+            <Button
+              onClick={
+                book.saleInfo.listPrice ? () => onClick(book) : () => null
+              }
+              variant="dark"
+              size="sm"
+            >
               Add to Cart
             </Button>
           </Card.Body>

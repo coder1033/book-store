@@ -56,11 +56,11 @@ const ShowCart = () => {
   }
   if (!parseInt(localStorage.total_items)) {
     return (
-        <Container className="show-cart-container">
+      <Container className="show-cart-container">
         <AiOutlineShoppingCart size={200} />
         There's nothing in your cart...
-        </Container>
-    )
+      </Container>
+    );
   }
   return (
     <Container className="show-cart-container">
