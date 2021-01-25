@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Container, Form, Button } from "react-bootstrap";
+import { AiOutlineSearch } from "react-icons/ai";
+import "./style/app.css";
 
-function App() {
+function App(props) {
+  let [search_input, setSearchInput] = useState("");
+  const onChange = (e) => {
+    setSearchInput("/" + e.target.value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Container style={props.style} className="search">
+      <Form action={search_input}>
+        <input
+          id="search"
+          placeholder="Title of the Book..."
+          type="text"
+          onChange={onChange}
+        />
+        <Button
+          href={search_input}
+          type="submit"
+          variant="outline-dark"
+          size="sm"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <AiOutlineSearch size={26} cursor="Pointer" />
+        </Button>
+      </Form>
+    </Container>
   );
 }
 
