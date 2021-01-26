@@ -6,7 +6,7 @@ import "./style/app.css";
 function App(props) {
   let [search_input, setSearchInput] = useState("");
   const onChange = (e) => {
-    setSearchInput(`book-store/#/${e.target.value}`);
+    setSearchInput(`/book-store/#/${e.target.value}`);
   };
 
   return (
