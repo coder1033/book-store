@@ -18,40 +18,40 @@ const Routes = () => {
     <div>
       <Navbar collapseOnSelect expand="sm" variant="light" className="navbar">
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="/book-store">
             <h1>Book Store</h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link href="/book-store">Home</Nav.Link>
+              <Nav.Link href="/book-store/about">About</Nav.Link>
             </Nav>
             <Nav>
               <NavDropdown title="Genre" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/fiction">Fiction</NavDropdown.Item>
+                <NavDropdown.Item href="/book-store/fiction">Fiction</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/mystery">Mystery</NavDropdown.Item>
+                <NavDropdown.Item href="/book-store/mystery">Mystery</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/fantasy">Fantasy</NavDropdown.Item>
+                <NavDropdown.Item href="/book-store/fantasy">Fantasy</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/action+adventure">
+                <NavDropdown.Item href="/book-store/action+adventure">
                   Action & Adventure
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/biography">Biography</NavDropdown.Item>
+                <NavDropdown.Item href="/book-store/biography">Biography</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/romance">Romance</NavDropdown.Item>
+                <NavDropdown.Item href="/book-store/romance">Romance</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/horror">Horror</NavDropdown.Item>
+                <NavDropdown.Item href="/book-store/horror">Horror</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/classics">Classics</NavDropdown.Item>
+                <NavDropdown.Item href="/book-store/classics">Classics</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/science-fiction">
+                <NavDropdown.Item href="/book-store/science-fiction">
                   Sci-fi
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="/cart">
+              <Nav.Link href="/book-store/cart">
                 Cart
                 <AiOutlineShoppingCart />{" "}
                 <span id="cart-items">
@@ -64,10 +64,11 @@ const Routes = () => {
       </Navbar>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={App} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/cart" component={ShowCart} />
-          <Route path="/:id" component={Search} />
+          <Route exact path="/book-store" component={App} />
+          <Route exact path="/book-store" component={App} />
+          <Route exact path="/book-store/about" component={About} />
+          <Route exact path="/book-store/cart" component={ShowCart} />
+          <Route path="/book-store/:id" component={Search} />
         </Switch>
       </BrowserRouter>
     </div>
