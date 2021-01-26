@@ -100,6 +100,7 @@ const ShowCart = () => {
               placeholder={books_count[id]}
               min="0"
               id="qty"
+              required
             />
           </form>
         </Jumbotron>
