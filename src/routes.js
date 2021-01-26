@@ -1,4 +1,4 @@
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import App from "./app";
@@ -62,14 +62,14 @@ const Routes = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <HashRouter basename="/">
+      <BrowserRouter basename="book-store/#/">
         <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/about" component={About} />
           <Route exact path="/cart" component={ShowCart} />
           <Route path="/:id" component={Search} />
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 };
