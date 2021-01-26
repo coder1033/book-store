@@ -20,11 +20,7 @@ const Show = (props) => {
         >
           <Card.Img
             variant="top"
-            src={
-              book.volumeInfo.imageLinks
-                ? book.volumeInfo.imageLinks.thumbnail
-                : ""
-            }
+            src={book.volumeInfo.imageLinks.thumbnail}
             alt="image not available"
             width="300"
             height="250"
@@ -32,10 +28,10 @@ const Show = (props) => {
           <Card.Body>
             <Card.Title className="text-muted">
               Price{" "}
-              {book.saleInfo.listPrice ? book.saleInfo.listPrice.amount : "NaN"}{" "}
+              {book.saleInfo.listPrice ? book.saleInfo.listPrice.amount : 0}{" "}
               {book.saleInfo.listPrice
                 ? book.saleInfo.listPrice.currencyCode
-                : "NaN"}
+                : "INR"}
             </Card.Title>
             <Button
               onClick={

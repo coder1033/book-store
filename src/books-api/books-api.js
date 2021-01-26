@@ -5,6 +5,13 @@ const getBooksData = async (search) => {
     { mode: "cors" }
   );
   response = await response.json();
+
+  let keys = Object.keys(response["items"]);
+  keys = keys.filter((key) => response["items"][key].volumeInfo.imageLinks);
+  response = {
+    totalItems: keys.length,
+    items: keys.map((key) => response["items"][key]),
+  };
   return response;
 };
 
