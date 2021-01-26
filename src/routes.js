@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import App from "./app";
@@ -18,14 +18,14 @@ const Routes = () => {
     <div>
       <Navbar collapseOnSelect expand="sm" variant="light" className="navbar">
         <Container>
-          <Navbar.Brand href="/book-store/">
+          <Navbar.Brand href="/book-store/#">
             <h1>Book Store</h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="/book-store/">Home</Nav.Link>
-              <Nav.Link href="/book-store/about">About</Nav.Link>
+              <Nav.Link href="/book-store/#">Home</Nav.Link>
+              <Nav.Link href="/book-store/#/about">About</Nav.Link>
             </Nav>
             <Nav>
               <NavDropdown title="Genre" id="collasible-nav-dropdown">
@@ -76,14 +76,14 @@ const Routes = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
-          <Route exact path="/book-store/" component={App} />
-          <Route exact path="/book-store/about" component={About} />
+          <Route exact path="/" component={App} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/book-store/cart" component={ShowCart} />
           <Route path="/book-store/:id" component={Search} />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };
