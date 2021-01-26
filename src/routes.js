@@ -29,43 +29,43 @@ const Routes = () => {
             </Nav>
             <Nav>
               <NavDropdown title="Genre" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/book-store/#fiction">
+                <NavDropdown.Item href="/book-store/#/fiction">
                   Fiction
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/book-store/#mystery">
+                <NavDropdown.Item href="/book-store/#/mystery">
                   Mystery
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/book-store/#fantasy">
+                <NavDropdown.Item href="/book-store/#/fantasy">
                   Fantasy
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/book-store/#action+adventure">
+                <NavDropdown.Item href="/book-store/#/action+adventure">
                   Action & Adventure
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/book-store/#biography">
+                <NavDropdown.Item href="/book-store/#/biography">
                   Biography
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/book-store/#romance">
+                <NavDropdown.Item href="/book-store/#/romance">
                   Romance
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/book-store/#horror">
+                <NavDropdown.Item href="/book-store/#/horror">
                   Horror
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/book-store/#classics">
+                <NavDropdown.Item href="/book-store/#/classics">
                   Classics
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/book-store/#science-fiction">
+                <NavDropdown.Item href="/book-store/#/science-fiction">
                   Sci-fi
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="/book-store/#cart">
+              <Nav.Link href="/book-store/#/cart">
                 Cart
                 <AiOutlineShoppingCart />{" "}
                 <span id="cart-items">
@@ -80,8 +80,8 @@ const Routes = () => {
         <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/book-store/cart" component={ShowCart} />
-          <Route path="/book-store/:id" component={Search} />
+          <Route exact path="/cart" component={ShowCart} />
+          <Route path="/:id" component={Search} />
         </Switch>
       </HashRouter>
     </div>
