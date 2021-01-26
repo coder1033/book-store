@@ -25,7 +25,7 @@ const Routes = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="/book-store/">Home</Nav.Link>
-              <Nav.Link href="/book-store/#about">About</Nav.Link>
+              <Nav.Link href="/book-store/#/about">About</Nav.Link>
             </Nav>
             <Nav>
               <NavDropdown title="Genre" id="collasible-nav-dropdown">
@@ -65,7 +65,7 @@ const Routes = () => {
       <BrowserRouter basename="/book-store">
         <Switch>
           <Route exact path="/" component={App} />
-          <Route exact path="/#about" component={About} />
+          <Route exact path="/#/about" component={About} />
           <Route exact path="/#cart" component={ShowCart} />
           <Route path="/#:id" component={Search} />
         </Switch>
