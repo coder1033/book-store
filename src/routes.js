@@ -64,6 +64,7 @@ const Routes = () => {
       </Navbar>
       <BrowserRouter basename="book-store/#/">
         <Switch>
+          <Route exact path="" component={App} />
           <Route exact path="/" component={App} />
           <Route exact path="/about" component={About} />
           <Route exact path="/cart" component={ShowCart} />
